@@ -1,7 +1,7 @@
 import { useId } from 'react'
 import { motion } from 'framer-motion'
 
-export default function Logo({ size = 64, withWordmark = true }) {
+export default function Logo({ size = 64, withWordmark = true, light = false }) {
   const uid = useId().replace(/:/g, '')
   return (
     <div className="flex items-center gap-3.5">
@@ -39,10 +39,22 @@ export default function Logo({ size = 64, withWordmark = true }) {
       </motion.div>
       {withWordmark && (
         <div className="leading-none">
-          <p className="font-display text-[10px] font-semibold tracking-[0.3em] text-gold-soft uppercase drop-shadow-[0_2px_8px_rgba(0,0,0,0.55)] sm:text-[12px]">
+          <p
+            className={`font-display text-[10px] font-semibold tracking-[0.3em] uppercase sm:text-[12px] ${
+              light
+                ? 'text-ink/70'
+                : 'text-gold-soft drop-shadow-[0_2px_8px_rgba(0,0,0,0.55)]'
+            }`}
+          >
             Geniuss Smart Agro
           </p>
-          <p className="mt-1.5 font-serif text-[1.35rem] font-semibold tracking-wide text-gold-soft drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)] sm:text-[1.7rem]">
+          <p
+            className={`mt-1.5 font-serif text-[1.35rem] font-semibold tracking-wide sm:text-[1.7rem] ${
+              light
+                ? 'text-ink'
+                : 'text-gold-soft drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]'
+            }`}
+          >
             Amrut Shivar
           </p>
         </div>
