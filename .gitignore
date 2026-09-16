@@ -1,0 +1,6 @@
+node_modules
+dist
+.venv
+_pdf_extract
+.DS_Store
+.cursor
