@@ -6,7 +6,7 @@ export default function Proof() {
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 md:px-8 lg:grid-cols-2">
         <Reveal>
           <img
-            src="/images/farmers.jpg?v=2"
+            src={`${import.meta.env.BASE_URL}images/farmers.jpg`}
             alt="Hydroponic greenhouse team"
             className="h-[420px] w-full rounded-[2rem] object-cover object-center shadow-[0_24px_60px_rgba(7,22,15,0.16)] md:h-[520px]"
           />

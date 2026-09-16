@@ -15,7 +15,7 @@ export default function Impact() {
   return (
     <section className="relative overflow-hidden bg-forest py-24 md:py-32">
       <img
-        src="/images/concept-aerial.jpg?v=2"
+        src={`${import.meta.env.BASE_URL}images/concept-aerial.jpg`}
         alt="Amrut Shivar rural prosperity concept"
         className="absolute inset-0 h-full w-full object-cover object-center opacity-45"
       />

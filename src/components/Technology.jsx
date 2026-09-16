@@ -41,7 +41,7 @@ export default function Technology() {
         <Reveal delay={0.15}>
           <div className="relative">
             <img
-              src="/images/hydro-greenhouse.jpg?v=2"
+              src={`${import.meta.env.BASE_URL}images/hydro-greenhouse.jpg`}
               alt="Climate controlled hydroponic greenhouse"
               className="h-[420px] w-full rounded-[2rem] object-cover shadow-[0_30px_80px_rgba(7,22,15,0.25)] md:h-[520px]"
             />

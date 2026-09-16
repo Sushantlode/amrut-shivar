@@ -66,7 +66,7 @@ export default function FarmMap() {
         <div className="mt-12 grid items-start gap-8 lg:grid-cols-[1.2fr_0.8fr]">
           <Reveal>
             <div className="relative overflow-hidden rounded-[2rem] border border-gold/20">
-              <img src="/images/master-plan.jpg?v=2" alt="Amrut Shivar master plan" className="w-full" />
+              <img src={`${import.meta.env.BASE_URL}images/master-plan.jpg`} alt="Amrut Shivar master plan" className="w-full" />
               {[
                 { id: 'hydro', top: '30%', left: '62%' },
                 { id: 'moringa', top: '36%', left: '22%' },

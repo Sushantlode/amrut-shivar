@@ -16,7 +16,7 @@ export default function Hero() {
   return (
     <section id="hero" className="relative min-h-screen overflow-hidden grain">
       <img
-        src="/images/farm-aerial.jpg?v=2"
+        src={`${import.meta.env.BASE_URL}images/farm-aerial.jpg`}
         alt="Amrut Shivar integrated farm aerial"
         className="absolute inset-0 h-full w-full object-cover object-center"
       />
