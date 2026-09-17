@@ -15,13 +15,19 @@ const chips = [
 export default function Hero() {
   return (
     <section id="hero" className="relative min-h-screen overflow-hidden grain">
-      <img
-        src={`${import.meta.env.BASE_URL}images/farm-aerial.jpg`}
-        alt="Amrut Shivar integrated farm aerial"
+      <video
         className="absolute inset-0 h-full w-full object-cover object-center"
+        src={`${import.meta.env.BASE_URL}videos/hero.mp4`}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        aria-label="Amrut Shivar farm video"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-ink/45 via-ink/30 to-ink/85" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(212,175,55,0.16),transparent_42%)]" />
+
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/50" />
       <FloatingLeaves />
 
       <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-end px-5 pb-16 pt-32 md:px-8 md:pb-20">
@@ -47,9 +53,9 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.45 }}
-          className="mt-4 font-deva text-xl text-[#fff1b8] drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)] md:text-3xl"
+          className="mt-4 text-xl text-[#fff1b8] drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)] md:text-3xl"
         >
-          एकात्मिक स्मार्ट फार्मिंग प्लॅटफॉर्म
+          Integrated smart farming platform
         </motion.p>
 
         <motion.p

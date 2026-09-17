@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-import Logo from './Logo'
 import { scrollToId } from '../hooks/useLenis'
 
 const links = [
@@ -17,7 +16,6 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [active, setActive] = useState('hero')
   const [hovered, setHovered] = useState(null)
-  const [progress, setProgress] = useState(0)
   const [hidden, setHidden] = useState(false)
   const stopTimer = useRef(null)
 
@@ -31,8 +29,6 @@ export default function Navbar() {
         if (el && el.getBoundingClientRect().top < 140) current = id
       })
       setActive(current)
-      const max = document.documentElement.scrollHeight - window.innerHeight
-      setProgress(max > 0 ? Math.min(1, y / max) : 0)
 
       if (open || y < 12) {
         setHidden(false)
@@ -71,8 +67,13 @@ export default function Navbar() {
           className="text-left"
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
+          aria-label="Geniuss home"
         >
-          <Logo size={56} light />
+          <img
+            src={`${import.meta.env.BASE_URL}images/geniuss-logo.png?v=2`}
+            alt="Geniuss"
+            className="h-10 w-auto object-contain sm:h-12"
+          />
         </motion.button>
 
         <nav
@@ -161,13 +162,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[3px] bg-ink/10">
-        <motion.div
-          className="h-full origin-left bg-gradient-to-r from-leaf via-ink to-leaf"
-          style={{ scaleX: progress }}
-        />
-      </div>
     </motion.header>
   )
 }
